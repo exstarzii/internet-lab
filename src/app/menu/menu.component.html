@@ -1,0 +1,15 @@
+<div class="container" [class.open]="menuOpen">
+  <nav class="container-child">
+    <div class="logo">
+      <a href="" class="headline-5">testlab</a>
+    </div>
+    <div class="burger-menu" (click)="toggleMenu()">
+    </div>
+    <ul class="body-16">
+      <li><a (click)="menuOff()" href="#how-it-works">Как это работает</a></li>
+      <li><a (click)="menuOff()" href="#block-3">3-й блок</a></li>
+      <li><a (click)="menuOff()" href="#faq">Вопросы и ответы</a></li>
+      <li><a (click)="menuOff()" href="#form">Форма</a></li>
+    </ul>
+  </nav>
+</div>

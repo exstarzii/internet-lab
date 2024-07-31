@@ -1,0 +1,159 @@
+.container {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.container-child {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.burger-menu {
+  grid-area: burger;
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.burger-menu::after {
+  content: "\2630"; /* Unicode for burger icon */
+}
+
+.logo {
+  grid-area: logo;
+}
+
+ul {
+  grid-area: ul;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+ul li {
+  float: left;
+}
+
+ul li a,
+.logo {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .container.open {
+    background-color: white;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: flex-start;
+
+    .burger-menu,
+    .logo a {
+      color: rgba(25, 28, 31, 1);
+    }
+
+    .burger-menu::after {
+      content: "\2716"; /* Unicode for cross icon */
+    }
+
+    ul {
+      display: flex;
+    }
+
+    ul li a {
+      color: gray;
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(236, 239, 242, 1);
+      font-size: 18px;
+      line-height: 32px;
+      cursor: pointer;
+    }
+
+    ul li a:first-child {
+      border-top: 1px solid rgba(236, 239, 242, 1);
+    }
+
+    ul li a::after {
+      content: "";
+      width: 24px;
+      height: 24px;
+      background: url('/assets/arrow.svg');
+      background-size: 100% 100%;
+    }
+
+    ul li a:hover {
+      text-decoration: none;
+    }
+  }
+
+  .container-child {
+    display: grid;
+    grid-template-areas: "logo burger"
+      "ul ul";
+    width: 100%;
+  }
+
+  .burger-menu {
+    display: block;
+    justify-self: end;
+  }
+
+  ul {
+    display: none;
+    flex-direction: column;
+  }
+
+  ul li {
+    float: none;
+  }
+}
+
+
+.logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.logo::before,
+.logo::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgb(26, 29, 204);
+  position: absolute;
+}
+
+.logo::before {
+  left: 0;
+  z-index: 2;
+}
+
+.logo::after {
+  left: 12px;
+  background-color: rgba(236, 239, 242, 1);
+}
+
+.logo a {
+  margin-left: 36px;
+  color: white;
+  text-decoration: none;
+}

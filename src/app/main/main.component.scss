@@ -1,0 +1,28 @@
+.main {
+  background-image: url("/assets/main_background.jfif");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.main-block {
+  max-width: 748px;
+}
+.main {
+  position: relative;
+  z-index: 0;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(42, 108, 234, 1);
+  opacity: 0.8;
+  z-index: -1;
+}

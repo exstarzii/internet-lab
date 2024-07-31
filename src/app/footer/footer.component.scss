@@ -1,0 +1,15 @@
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 88px;
+    margin-top: 88px;
+    border-top: 1px solid rgba(236, 239, 242, 1);
+}
+
+@media screen and (max-width: 768px) {
+    .footer{
+        margin-top: 44px;
+        border-top: 1px solid rgba(236, 239, 242, 1);
+    }
+}

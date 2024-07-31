@@ -1,0 +1,135 @@
+.container {
+    background-color: rgba(246, 248, 250, 1);
+    padding: 20px 0;
+}
+.container, .container-child, #wrapper{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+    gap: 20px;
+}
+
+.avatar,
+.avatar img {
+    width: 44px;
+    border-radius: 50%;
+}
+
+#wrapper {
+    width: 100%;
+    max-width: 1020px;
+    position: relative;
+    padding-bottom: 20px;
+    margin: auto;
+}
+
+#carousel {
+    overflow: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+#carousel::-webkit-scrollbar {
+    height: 0;
+}
+
+#prev,
+#next {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: none;
+    padding: 8px;
+    outline: 0;
+    cursor: pointer;
+    position: absolute;
+    background-color: transparent;
+}
+
+#prev svg,
+#next svg{
+    background: url(/assets/arrow.svg) 0% 0% / 100% 100%;
+    width: 16px;
+    height: 32px;
+}
+
+#prev:hover svg path,
+#next:hover svg path{
+    fill: rgba(42, 108, 234, 1);
+}
+
+#prev {
+    top: 50%;
+    left: -50px;
+    transform: translate(50%, -50%) rotate(180deg);
+    display: none;
+}
+
+#next {
+    top: 50%;
+    right: -50px;
+    transform: translate(-50%, -50%);
+}
+
+#content {
+    display: grid;
+    // grid-gap: 20px;
+    grid-auto-flow: column;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.item{
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 340px;
+}
+
+.item-inner {
+    box-sizing: border-box;
+    padding: 22px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.1), -5px -5px 10px 0 rgba(0, 0, 0, 0.1);
+    background-color: white;
+    height: 100%;
+
+    .body-14 {
+        padding: 10px 0;
+    }
+}
+
+
+.carousel-indicators {
+    padding: 20px;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: rgba(194, 200, 205, 1);
+}
+
+.carousel-indicators li.active {
+    background-color:rgba(42, 108, 234, 1);
+}
+
+@media screen and (max-width: 768px) {
+    .item{
+        width: 300px;
+        height: fit-content;
+    }
+    .item-inner{
+        height: auto;
+    }
+}
