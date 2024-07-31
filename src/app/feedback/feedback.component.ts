@@ -56,7 +56,7 @@ export class FeedbackComponent {
     }
     this.wrapper!.style.maxWidth = (this.itemsShown * this.itemWidth) + 'px';
     this.dotsArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].slice(0, this.itemCount - this.itemsShown + 1);
-    if(this.currentItem >= this.itemCount) this.currentItem = this.itemCount - this.itemsShown + 1
+    if(this.currentItem >= this.dotsArray.length) this.currentItem = this.dotsArray.length - 1;
     this.setCurrentItem(this.currentItem);
   }
 
